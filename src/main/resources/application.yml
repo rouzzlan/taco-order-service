@@ -1,2 +1,10 @@
 server:
   port: 9004
+spring:
+  data:
+    mongodb:
+      database: ${DB_NAME:OrderDB}
+      host: ${DB_HOST:docker-pool.localdomain}
+      port: ${DB_PORT:27020}
+      username: ${DB_USR:rouslan}
+      password: ${DB_PASSWD:50m9FiD3}
