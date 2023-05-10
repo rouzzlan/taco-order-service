@@ -33,3 +33,14 @@ dependencies {
 tasks.named('test') {
 	useJUnitPlatform()
 }
+
+tasks.named("bootBuildImage") {
+	imageName = "harbour.739.net/taco-cloud/${project.name}:${project.version}"
+	publish = true
+	docker {
+		publishRegistry {
+			username = "rouslan"
+			password = "50m9FiD3"
+		}
+	}
+}
