@@ -1,6 +1,7 @@
 package com.falcontech.tacoorderservice.controller;
 
 import com.falcontech.tacoorderservice.controller.handler.OrderHandler;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -15,6 +16,8 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 
 @Configuration
 public class OrderController {
+  @Value("${app.cors}")
+  private String cors;
   private static final String ENDPOINT_PATH = "/order";
 
   @Bean
@@ -30,7 +33,7 @@ public class OrderController {
     CorsConfiguration config = new CorsConfiguration();
     //    config.applyPermitDefaultValues()
     //    config.setAllowCredentials(true);
-    config.addAllowedOrigin("*");
+    config.addAllowedOrigin(cors);
     config.addAllowedHeader("*");
     config.addAllowedMethod(HttpMethod.GET);
 

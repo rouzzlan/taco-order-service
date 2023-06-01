@@ -8,3 +8,5 @@ spring:
       port: ${DB_PORT:27020}
       username: ${DB_USR:rouslan}
       password: ${DB_PASSWD:50m9FiD3}
+app:
+  cors: ${CORS_ORIGIN:*}
